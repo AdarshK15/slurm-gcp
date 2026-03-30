@@ -61,6 +61,8 @@ source "googlecompute" "image" {
   project_id = var.project_id
   zone       = var.zone
 
+  custom_endpoints = "https://www.googleapis.com/compute/staging_v1/"
+
   ### image ###
   source_image_project_id = [var.project_id, var.source_image_project_id]
   skip_create_image       = var.skip_create_image

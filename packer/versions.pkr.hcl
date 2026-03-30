@@ -20,13 +20,13 @@ packer {
   required_plugins {
     ansible = {
       source  = "github.com/hashicorp/ansible"
-      version = "~> 1.0"
+      version = "~> 1.1.4"
     }
     googlecompute = {
       source  = "github.com/hashicorp/googlecompute"
-      version = "~> 1.0"
+      version = "~> 1.2.5"
     }
   }
 
-  required_version = "~> 1.7"
+  required_version = ">= 1.7.9, < 2.0.0"
 }
