@@ -327,3 +327,37 @@ variable "extra_ansible_provisioners" {
   }))
   default = []
 }
+
+#####################
+# STAGING OVERRIDES #
+#####################
+
+variable "compute_endpoint" {
+  description = "The compute endpoint to use for the builder."
+  type        = string
+  default     = null
+}
+
+variable "gcloud_path_override" {
+  description = "The path to the gcloud directory to use (appended to PATH)."
+  type        = string
+  default     = null
+}
+
+variable "storage_endpoint" {
+  description = "The storage endpoint to use for the builder."
+  type        = string
+  default     = null
+}
+
+variable "oslogin_endpoint" {
+  description = "The OS Login endpoint to use for the builder."
+  type        = string
+  default     = null
+}
+
+variable "oauth2_endpoint" {
+  description = "The OAuth2 endpoint to use for the builder."
+  type        = string
+  default     = null
+}

@@ -61,7 +61,17 @@ source "googlecompute" "image" {
   project_id = var.project_id
   zone       = var.zone
 
+  custom_endpoints = merge(
+    var.compute_endpoint != null ? { "compute" = var.compute_endpoint } : {},
+    var.storage_endpoint != null ? { "storage" = var.storage_endpoint } : {},
+    var.oslogin_endpoint != null ? { "oslogin" = var.oslogin_endpoint } : {},
+    var.oauth2_endpoint != null ? { "oauth2" = var.oauth2_endpoint } : {}
+  )
+
+
+
   ### image ###
+
   source_image_project_id = [var.project_id, var.source_image_project_id]
   skip_create_image       = var.skip_create_image
 
